@@ -8,10 +8,17 @@ const App = () => {
     temperature: 25,
     conditions: "Sunny",
   });
+  const tempStyle = {
+    color: weather.temperature > 20 ? "red" : "blue",
+  };
+
   return (
     <div>
         {/* Do not remove the main div */}
-        <WeatherDisplay weather={weather} />
+        <p>
+        Temperature: <span style={tempStyle}>{weather.temperature}</span>
+       </p>
+       <p>Conditions: {weather.conditions}</p>
     </div>
   );
 };
